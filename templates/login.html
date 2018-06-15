@@ -1,0 +1,154 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登陆页</title>
+
+    <style>
+        body{
+
+            background: #99ff99 url({% static 'image/login_back_ground.jpg' %});
+            background-size:100%;
+        }
+        *{
+            margin:0px;
+            padding:0px;
+
+        }
+        .login_top{
+            width: 100%;
+            height: 50px;
+            background-color: deepskyblue;
+        }
+        .login_top_mid{
+            width:80%;
+            height:100%;
+            margin:0px auto;
+        }
+        .top_font{
+
+            font:italic 25px/50px KaiTi,DFKai-SB;
+            color:white;
+
+        }
+        .left_float{
+            float:left;
+        }
+        .right_float{
+            float:right;
+        }
+        .top_login{
+            line-height: 50px;
+        }
+        .login_div{
+            width:350px;
+            height:350px;
+            background-color:white;
+            margin:150px auto;
+        }
+        .logo{
+            height:40px;
+
+        }
+        .form_top{
+            height:60px;
+            width:250px;
+            margin:0px auto;
+        }
+         .form_top P{
+             width:120px;
+             margin:0px auto;
+             text-align: center;
+
+             font: 30px/60px KaiTi;
+
+         }
+         .form_top P:hover{
+             border-bottom: dodgerblue solid;
+             color:pink;
+         }
+        .input_div{
+            width:70%;
+            margin:25px auto;
+            position:relative;
+
+        }
+        .input_text{
+            text-indent: 2em;
+            width:240px;
+            height:50px;
+            font-size:20px;
+            background-image:url("{% static 'image/football.png' %}");
+            background-repeat:no-repeat;
+            background-position:0px 0px;
+            background-size:45px;
+
+        }
+        .login_btn{
+            width:100px;
+            text-decoration:none;
+            background:deepskyblue;
+            color:white;
+
+            padding: 10px 30px 10px 30px;
+            font-size:16px;
+            font-family: 微软雅黑,宋体,Arial,Helvetica,Verdana,sans-serif;
+            font-weight:bold;
+            border-radius:3px;
+
+            transition:all linear 0.30s;
+        }
+        .btn_div{
+            width:250px;
+            margin:auto;
+        }
+        .login_btn:hover{
+            background:red;
+        }
+        .register{
+            background:red;
+        }
+        .register:hover{
+            background:deepskyblue;
+        }
+        #message{
+            width:250px;
+            margin:10px auto 30px;
+            color:red;
+        }
+    </style>
+</head>
+<body>
+<div class="login_top">
+    <div class="login_top_mid">
+        <p class="left_float top_font"><img class="logo" src="{% static 'image/bird.png' %}" alt="logo">小鹏云笔记</p>
+        <P class="right_float top_login">欢迎xxx <a href="#">登录/退出</a></P>
+    </div>
+</div>
+<div class="login_div">
+    <div class="form_top">
+        <p class="left_float">登录</p>
+         <p class="right_float">注册</p>
+    </div>
+    <div class="form_input">
+        <form action="#">
+        <div class="input_div">
+            <input type="hidden" value="{{ csrf_token }}" id="csrf_token">
+            <input class="input_text" type="text" placeholder="请输入用户名 ...">
+        </div>
+        <div class="input_div">
+            <input class="input_text" type="password" placeholder="请输入密码 ...">
+        </div>
+        <p id="message">提示：测试字符</p>
+        <div class="btn_div">
+            <a href="#" class="login_btn">登陆</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="#" class="login_btn register">注册</a>
+        </div>
+        </form>
+
+    </div>
+</div>
+
+</body>
+</html>
